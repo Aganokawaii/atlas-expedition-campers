@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { COMMUNITY_STATS } from "@/data";
 
 export default function HeroSection() {
   return (
@@ -12,38 +13,66 @@ export default function HeroSection() {
         padding: "8rem 2rem 5rem",
       }}
     >
-      {/* Ambient glow */}
+      {/* Background gradient overlay — simulates landscape atmosphere */}
       <div className="absolute inset-0 pointer-events-none">
+        {/* Deep base */}
+        <div className="absolute inset-0 bg-bg-deep" />
+        {/* Horizon glow — warm amber */}
         <div
           style={{
             position: "absolute",
-            top: "20%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "900px",
-            height: "900px",
-            borderRadius: "50%",
-            background: "rgba(91,140,122,0.06)",
-            filter: "blur(180px)",
+            bottom: "0",
+            left: "0",
+            right: "0",
+            height: "60%",
+            background: "linear-gradient(to top, rgba(196,117,76,0.08) 0%, transparent 100%)",
           }}
         />
+        {/* Top atmosphere — cool pine */}
         <div
           style={{
             position: "absolute",
-            bottom: "15%",
-            right: "20%",
-            width: "500px",
-            height: "500px",
+            top: "0",
+            left: "0",
+            right: "0",
+            height: "40%",
+            background: "linear-gradient(to bottom, rgba(107,158,138,0.04) 0%, transparent 100%)",
+          }}
+        />
+        {/* Center glow orb */}
+        <div
+          style={{
+            position: "absolute",
+            top: "40%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "800px",
+            height: "600px",
             borderRadius: "50%",
-            background: "rgba(137,168,152,0.05)",
-            filter: "blur(140px)",
+            background: "radial-gradient(ellipse, rgba(196,117,76,0.06) 0%, transparent 70%)",
+            filter: "blur(100px)",
+          }}
+        />
+        {/* Subtle texture lines — mountain silhouette suggestion */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "0",
+            left: "0",
+            right: "0",
+            height: "120px",
+            background: `
+              linear-gradient(175deg, transparent 30%, rgba(107,158,138,0.03) 30.5%, transparent 31%),
+              linear-gradient(172deg, transparent 45%, rgba(107,158,138,0.04) 45.5%, transparent 46%),
+              linear-gradient(168deg, transparent 60%, rgba(107,158,138,0.05) 60.5%, transparent 61%)
+            `,
           }}
         />
       </div>
 
       <div
         style={{
-          maxWidth: "760px",
+          maxWidth: "800px",
           margin: "0 auto",
           width: "100%",
           position: "relative",
@@ -51,61 +80,63 @@ export default function HeroSection() {
           textAlign: "center",
         }}
       >
-        <span className="inline-flex items-center gap-2 border border-border-subtle rounded-full px-5 py-2 text-xs text-text-secondary tracking-wider mb-10">
-          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+        {/* Location badge */}
+        <span className="inline-flex items-center gap-2 border border-border-subtle rounded-full px-5 py-2 text-xs text-text-secondary tracking-wider mb-10 bg-bg-card/50 backdrop-blur-sm">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
           Vancouver, BC — Designed in Canada
         </span>
 
+        {/* Main headline */}
         <h1
           style={{
-            fontSize: "clamp(3.5rem, 8vw, 7.5rem)",
+            fontSize: "clamp(3rem, 7vw, 7rem)",
             lineHeight: 0.94,
-            marginBottom: "2.5rem",
+            marginBottom: "2rem",
             letterSpacing: "-0.02em",
           }}
         >
-          Go further.
+          Charged by
           <br />
-          <em className="text-accent not-italic">Stay longer.</em>
+          <em className="text-accent not-italic">Nature.</em>
         </h1>
 
+        {/* Subtitle */}
         <p
           className="text-text-secondary"
           style={{
-            fontSize: "1.2rem",
+            fontSize: "1.15rem",
             maxWidth: "560px",
             margin: "0 auto 3rem",
             lineHeight: 1.75,
           }}
         >
-          Lightweight truck campers engineered for the backcountry. 800 lbs
-          dry. Solar-ready. Built for everything from coastal rainforests to
-          Rocky Mountain passes.
+          Lightweight truck campers engineered for the backcountry.
+          Under 1,000 lbs dry. Solar-ready. Built for everything from
+          coastal rainforests to Rocky Mountain passes.
         </p>
 
+        {/* CTAs */}
         <div className="flex gap-4 flex-wrap justify-center mb-0">
           <Link
             href="/#products"
-            className="bg-accent hover:bg-[#e08a5c] text-white px-10 py-4 rounded-md text-base font-medium transition-all no-underline inline-block"
+            className="bg-accent hover:bg-accent-warm text-white px-10 py-4 rounded-md text-base font-medium transition-all no-underline inline-block"
           >
             Explore Models
           </Link>
           <Link
-            href="/#features"
+            href="/about"
             className="border border-border-subtle hover:border-text-muted text-text-primary px-10 py-4 rounded-md text-base font-medium transition-all no-underline inline-block"
           >
-            Why Summit &rarr;
+            Our Story &rarr;
           </Link>
         </div>
 
         {/* Key stats */}
-        <div
-          className="flex flex-wrap justify-center gap-10 md:gap-16 pt-12 mt-16 border-t border-border-subtle"
-        >
+        <div className="flex flex-wrap justify-center gap-10 md:gap-16 pt-12 mt-16 border-t border-border-subtle">
           {[
-            { value: "800 lbs", label: "Dry Weight" },
-            { value: "200W", label: "Solar Ready" },
-            { value: "R-7", label: "Insulation" },
+            { value: "<1,000 lbs", label: "Dry Weight" },
+            { value: "400W", label: "Solar Ready" },
+            { value: "4-Season", label: "Rated" },
             { value: "5 min", label: "Setup Time" },
           ].map((stat) => (
             <div key={stat.label}>
@@ -113,6 +144,18 @@ export default function HeroSection() {
                 {stat.value}
               </div>
               <div className="text-xs text-text-muted uppercase tracking-[0.15em] mt-2">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Community proof mini bar */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12 pt-10 mt-10">
+          {COMMUNITY_STATS.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="text-xl font-display text-accent">{stat.value}</div>
+              <div className="text-[0.65rem] uppercase tracking-[0.12em] text-text-muted mt-1">
                 {stat.label}
               </div>
             </div>

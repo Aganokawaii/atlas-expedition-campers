@@ -10,25 +10,26 @@ export default function TruckCompatibility() {
           <br />
           your truck.
         </h2>
-        <p
-          className="section-subtitle"
-          style={{ margin: "0 auto 4rem", maxWidth: "600px" }}
-        >
-          Engineered for half-ton, mid-size, and heavy-duty platforms from
-          every major manufacturer. We build to your VIN — not a one-size
-          template.
+        <p className="section-subtitle" style={{ margin: "0 auto 4rem", maxWidth: "600px" }}>
+          Engineered for half-ton, mid-size, and heavy-duty platforms from every major manufacturer. We build to your VIN — not a one-size template. No truck modifications required.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-3">
           {TRUCK_BRANDS.map((brand) => (
             <span
               key={brand}
-              className="bg-bg-card border border-border-subtle hover:border-accent hover:text-text-primary rounded-full px-6 py-3 text-sm text-text-secondary transition-all cursor-default"
+              className="bg-bg-card border border-border-subtle hover:border-accent/40 hover:text-text-primary rounded-full px-6 py-3 text-sm text-text-secondary transition-all cursor-default"
             >
               {brand}
             </span>
           ))}
         </div>
+
+        <p className="text-xs text-text-muted mt-8 max-w-lg mx-auto leading-relaxed">
+          Don&apos;t see your truck? We custom-fit to your bed dimensions and payload rating.
+          <br />
+          <a href="/#contact" className="text-accent hover:underline">Send us your VIN</a> for a free compatibility check.
+        </p>
       </div>
     </section>
   );

@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════
-   Summit Expedition — Design Tokens
-   Pacific Northwest — Mist / Sage / Pine
+   Atlas Expedition — Design Tokens
+   Dark Luxury Outdoor — Charcoal / Amber / Pine
    ═══════════════════════════════════════════ */
 @theme inline {
-  --color-bg-deep: #f4f2ee;
-  --color-bg-surface: #ecebe6;
-  --color-bg-card: #ffffff;
-  --color-border-subtle: #dddbd5;
-  --color-border-muted: #c8c6bf;
-  --color-text-primary: #2d3530;
-  --color-text-secondary: #5b6860;
-  --color-text-muted: #8d968f;
-  --color-accent: #5b8c7a;
-  --color-accent-glow: rgba(91, 140, 122, 0.15);
-  --color-accent-cool: #89a898;
-  --color-accent-warm: #c4754c;
+  --color-bg-deep: #0a0a0b;
+  --color-bg-surface: #111114;
+  --color-bg-card: #18181c;
+  --color-border-subtle: #252529;
+  --color-border-muted: #35353a;
+  --color-text-primary: #f1f1f3;
+  --color-text-secondary: #9898a0;
+  --color-text-muted: #64646c;
+  --color-accent: #c4754c;
+  --color-accent-glow: rgba(196, 117, 76, 0.12);
+  --color-accent-cool: #6b9e8a;
+  --color-accent-warm: #d4845c;
   --font-display: "Georgia", "Times New Roman", serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 }

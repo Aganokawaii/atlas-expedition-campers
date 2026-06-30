@@ -10,15 +10,18 @@ export default function TestingBadges() {
           <br />
           <em className="text-accent not-italic">Proven.</em>
         </h2>
+        <p className="section-subtitle" style={{ margin: "0 auto", maxWidth: "560px" }}>
+          Every Atlas product is tested in real conditions — from BC coastal downpours to Alberta winter nights.
+        </p>
 
-        <div className="flex flex-wrap justify-center gap-5 mt-14">
+        <div className="flex flex-wrap justify-center gap-4 mt-14">
           {TESTING_BADGES.map((badge) => (
             <div
               key={badge.label}
-              className="bg-bg-card border border-border-subtle hover:border-accent-cool rounded-xl p-7 min-w-[170px] transition-colors"
+              className="bg-bg-card border border-border-subtle hover:border-accent/30 rounded-xl p-7 min-w-[160px] transition-all hover:-translate-y-0.5"
             >
               <div className="text-4xl mb-4">{badge.icon}</div>
-              <div className="text-sm text-text-secondary">{badge.label}</div>
+              <div className="text-sm font-medium text-text-primary">{badge.label}</div>
               <div className="text-xs text-accent-cool mt-1.5">{badge.status}</div>
             </div>
           ))}

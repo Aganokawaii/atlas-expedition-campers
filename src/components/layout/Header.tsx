@@ -5,11 +5,11 @@ import Link from "next/link";
 import { SITE_CONFIG } from "@/data";
 
 const NAV_ITEMS = [
-  { label: "Products", href: "/#products" },
+  { label: "Camper", href: "/#products" },
+  { label: "Canopy", href: "/#canopy" },
   { label: "Features", href: "/#features" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -19,9 +19,9 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex items-center justify-between bg-bg-deep/85 backdrop-blur-xl border-b border-border-subtle">
       <Link
         href="/"
-        className="font-display text-xl tracking-wider text-text-primary hover:text-accent transition-colors no-underline"
+        className="font-display text-xl tracking-[0.08em] text-text-primary hover:text-accent transition-colors no-underline"
       >
-        {SITE_CONFIG.name.toUpperCase()}
+        ATLAS<span className="text-accent">.</span>EXPEDITION
       </Link>
 
       {/* Desktop Nav */}
@@ -37,7 +37,7 @@ export default function Header() {
         ))}
         <Link
           href="/#contact"
-          className="bg-accent hover:bg-[#e08a5c] text-white px-5 py-2.5 rounded-md text-sm font-medium transition-all no-underline"
+          className="bg-accent hover:bg-accent-warm text-white px-5 py-2.5 rounded-md text-sm font-medium transition-all no-underline"
         >
           Build Yours
         </Link>
@@ -81,7 +81,7 @@ export default function Header() {
           ))}
           <Link
             href="/#contact"
-            className="bg-accent hover:bg-[#e08a5c] text-white px-5 py-3 rounded-md text-center font-medium no-underline"
+            className="bg-accent hover:bg-accent-warm text-white px-5 py-3 rounded-md text-center font-medium no-underline"
             onClick={() => setMenuOpen(false)}
           >
             Build Yours

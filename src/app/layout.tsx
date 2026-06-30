@@ -4,9 +4,9 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Summit Expedition — Lightweight Truck Campers & Canopies",
+  title: "Atlas Expedition — Lightweight Truck Campers & Canopies",
   description:
-    "Lightweight truck campers engineered for the backcountry. 800 lbs dry. Solar-ready. Built for everything from coastal rainforests to Rocky Mountain passes. Designed in Vancouver, BC.",
+    "Lightweight truck campers engineered for the backcountry. Under 1,000 lbs dry. Solar-ready. 4-season rated. Designed in Vancouver, BC.",
   keywords: [
     "truck camper",
     "lightweight camper",
@@ -15,12 +15,14 @@ export const metadata: Metadata = {
     "overland",
     "4x4 camper",
     "Canadian made",
+    "pop-up camper",
+    "aluminum truck camper",
   ],
   openGraph: {
-    title: "Summit Expedition — Go Further. Stay Longer.",
+    title: "Atlas Expedition — Charged by Nature",
     description:
-      "Lightweight truck campers engineered for the backcountry. 800 lbs dry. Solar-ready.",
-    siteName: "Summit Expedition",
+      "Lightweight truck campers engineered for the backcountry. Under 1,000 lbs dry. Solar-ready.",
+    siteName: "Atlas Expedition",
     type: "website",
   },
 };

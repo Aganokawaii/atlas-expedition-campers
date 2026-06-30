@@ -1,6 +1,14 @@
 // ═══════════════════════════════════════════
-// Summit Expedition — Type Definitions
+// Atlas Expedition — Type Definitions
 // ═══════════════════════════════════════════
+
+export interface CamperTier {
+  name: string;
+  price: number;
+  tagline: string;
+  specs: ProductSpec[];
+  highlights: string[];
+}
 
 export interface Product {
   slug: string;
@@ -15,6 +23,7 @@ export interface Product {
   compatibleTrucks: string[];
   delivery: string;
   warranty: string;
+  tiers?: CamperTier[];
 }
 
 export interface ProductSpec {
@@ -58,7 +67,7 @@ export interface NavItem {
   href: string;
 }
 
-export interface CommunityPhoto {
-  handle: string;
-  alt: string;
+export interface CommunityStat {
+  value: string;
+  label: string;
 }

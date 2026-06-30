@@ -2,29 +2,34 @@ import { FEATURES } from "@/data";
 
 export default function FeaturesGrid() {
   return (
-    <section id="features" className="px-6 bg-bg-surface" style={{ paddingTop: "8rem", paddingBottom: "8rem" }}>
+    <section id="features" className="px-6" style={{ paddingTop: "8rem", paddingBottom: "8rem" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
         <div className="text-center" style={{ marginBottom: "5rem" }}>
-          <span className="section-tag">Why Summit</span>
+          <span className="section-tag">Why Atlas</span>
           <h2
             className="section-title"
             style={{ maxWidth: "800px", margin: "0 auto 1.5rem" }}
           >
-            Engineered for people who actually use their gear.
+            Engineered for people who
+            <br />
+            actually use their gear.
           </h2>
+          <p className="section-subtitle" style={{ margin: "0 auto", maxWidth: "560px" }}>
+            Every Atlas product shares the same DNA: welded aluminum, fire-rated insulation, and a relentless focus on weight reduction.
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {FEATURES.map((feature) => (
             <div
               key={feature.title}
-              className="bg-bg-card border border-border-subtle hover:border-border-muted rounded-xl p-8 h-full transition-colors"
+              className="bg-bg-card border border-border-subtle hover:border-border-muted rounded-xl p-8 h-full transition-colors group"
             >
-              <div className="w-14 h-14 flex items-center justify-center text-2xl bg-accent/10 rounded-lg mb-5">
+              <div className="w-12 h-12 flex items-center justify-center text-2xl bg-accent/10 rounded-lg mb-5 group-hover:bg-accent/15 transition-colors">
                 {feature.icon}
               </div>
-              <h3 className="font-display text-xl mb-3">{feature.title}</h3>
-              <p className="text-text-secondary leading-relaxed" style={{ fontSize: "0.9rem", lineHeight: 1.7 }}>
+              <h3 className="font-display text-lg mb-3">{feature.title}</h3>
+              <p className="text-text-secondary leading-relaxed" style={{ fontSize: "0.88rem", lineHeight: 1.7 }}>
                 {feature.description}
               </p>
             </div>

@@ -4,10 +4,10 @@ import { useState } from "react";
 import { FAQS } from "@/data";
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="px-6 bg-bg-surface" style={{ paddingTop: "8rem", paddingBottom: "8rem" }}>
+    <section id="faq" className="px-6" style={{ paddingTop: "8rem", paddingBottom: "8rem" }}>
       <div style={{ maxWidth: "768px", margin: "0 auto" }}>
         <div className="text-center" style={{ marginBottom: "4rem" }}>
           <span className="section-tag">FAQ</span>
@@ -18,16 +18,16 @@ export default function FAQSection() {
           </h2>
         </div>
 
-        <div>
+        <div className="space-y-px">
           {FAQS.map((faq, i) => (
-            <div key={i} className="border-b border-border-subtle">
+            <div key={i} className="bg-bg-card border border-border-subtle rounded-lg overflow-hidden">
               <button
-                className="w-full flex justify-between items-center py-6 text-left hover:text-accent transition-colors"
+                className="w-full flex justify-between items-center px-6 py-5 text-left hover:text-accent transition-colors"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
-                <span className="text-base font-medium pr-6">{faq.question}</span>
+                <span className="text-sm font-medium pr-6">{faq.question}</span>
                 <span
-                  className={`text-text-muted transition-transform shrink-0 text-lg ${
+                  className={`text-text-muted transition-transform shrink-0 ${
                     openIndex === i ? "rotate-180" : ""
                   }`}
                 >
@@ -36,8 +36,8 @@ export default function FAQSection() {
               </button>
               {openIndex === i && (
                 <div
-                  className="pb-6 text-text-secondary leading-relaxed"
-                  style={{ fontSize: "0.95rem", lineHeight: 1.75 }}
+                  className="px-6 pb-5 text-text-secondary leading-relaxed"
+                  style={{ fontSize: "0.9rem", lineHeight: 1.8 }}
                 >
                   {faq.answer}
                 </div>
