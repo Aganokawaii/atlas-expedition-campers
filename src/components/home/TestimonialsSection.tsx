@@ -2,8 +2,17 @@ import { TESTIMONIALS } from "@/data";
 
 export default function TestimonialsSection() {
   return (
-    <section className="px-6 bg-bg-surface" style={{ paddingTop: "8rem", paddingBottom: "8rem" }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+    <section className="px-6 bg-bg-surface relative overflow-hidden" style={{ paddingTop: "8rem", paddingBottom: "8rem" }}>
+      {/* Subtle lifestyle image */}
+      <div className="absolute inset-0 opacity-[0.04]">
+        <img
+          src="/images/camper-campsite-sunset.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <div style={{ maxWidth: "1280px", margin: "0 auto", position: "relative", zIndex: 1 }}>
         <div className="text-center" style={{ marginBottom: "5rem" }}>
           <span className="section-tag">Testimonials</span>
           <h2 className="section-title" style={{ marginBottom: "0.5rem" }}>

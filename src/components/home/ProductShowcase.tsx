@@ -49,28 +49,27 @@ export default function ProductShowcase() {
           {/* Active Tier Card */}
           <div
             className="bg-bg-card border border-border-subtle rounded-2xl overflow-hidden"
-            style={{ maxWidth: "900px", margin: "0 auto" }}
+            style={{ maxWidth: "960px", margin: "0 auto" }}
           >
-            {/* Card header — gradient atmosphere */}
-            <div
-              className="h-48 relative overflow-hidden"
-              style={{
-                background: `
-                  linear-gradient(135deg, rgba(196,117,76,0.15) 0%, rgba(107,158,138,0.08) 50%, rgba(10,10,11,0.9) 100%),
-                  radial-gradient(ellipse at 30% 50%, rgba(196,117,76,0.1) 0%, transparent 60%)
-                `,
-              }}
-            >
+            {/* Card header — product image */}
+            <div className="h-64 md:h-80 relative overflow-hidden">
+              <img
+                src="/images/camper-popup-forest.jpg"
+                alt="Atlas Camper in the wild"
+                className="w-full h-full object-cover"
+                style={{ filter: "brightness(0.5)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-bg-card/30 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
                   <span className="text-[10px] uppercase tracking-[0.25em] text-accent block mb-2">
                     {currentTier.name} Edition
                   </span>
-                  <span className="text-5xl font-display text-text-primary">
+                  <span className="text-5xl font-display text-white">
                     ${currentTier.price.toLocaleString()}
-                    <span className="text-base text-text-muted font-body ml-2">USD</span>
+                    <span className="text-base text-white/50 font-body ml-2">USD</span>
                   </span>
-                  <p className="text-text-secondary text-sm mt-3">{currentTier.tagline}</p>
+                  <p className="text-white/60 text-sm mt-3">{currentTier.tagline}</p>
                 </div>
               </div>
             </div>
@@ -131,22 +130,20 @@ export default function ProductShowcase() {
             className="grid md:grid-cols-2 bg-bg-card border border-border-subtle rounded-2xl overflow-hidden"
             style={{ maxWidth: "1000px", margin: "0 auto" }}
           >
-            {/* Visual side */}
-            <div
-              className="h-72 md:h-auto relative"
-              style={{
-                background: `
-                  linear-gradient(160deg, rgba(107,158,138,0.12) 0%, rgba(10,10,11,0.95) 60%),
-                  radial-gradient(ellipse at 70% 40%, rgba(196,117,76,0.08) 0%, transparent 50%)
-                `,
-              }}
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
+            {/* Visual side — product image */}
+            <div className="h-72 md:h-auto relative overflow-hidden">
+              <img
+                src="/images/canopy-gullwing-detail.jpg"
+                alt="Aero Canopy gull-wing detail"
+                className="w-full h-full object-cover"
+                style={{ filter: "brightness(0.45)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-bg-card md:bg-gradient-to-t md:from-bg-card md:via-bg-card/20 md:to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center md:hidden">
                 <div className="text-center">
-                  <div className="text-6xl mb-4 opacity-30">🛻</div>
                   <div className="text-accent text-2xl font-display">
                     From ${canopy.startingPrice.toLocaleString()}
-                    <span className="text-sm text-text-muted font-body ml-2">USD</span>
+                    <span className="text-sm text-white/50 font-body ml-2">USD</span>
                   </div>
                 </div>
               </div>
@@ -154,7 +151,8 @@ export default function ProductShowcase() {
 
             {/* Specs side */}
             <div className="p-10">
-              <h3 className="font-display text-2xl mb-6">Aero Series — Matte Black</h3>
+              <h3 className="font-display text-2xl mb-2">Aero Series</h3>
+              <p className="text-accent text-sm mb-6">Matte Black · Edition 01 · Collection 2026</p>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {canopy.specs.map((spec) => (
                   <div key={spec.label}>

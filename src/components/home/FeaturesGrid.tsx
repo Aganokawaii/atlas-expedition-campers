@@ -2,8 +2,17 @@ import { FEATURES } from "@/data";
 
 export default function FeaturesGrid() {
   return (
-    <section id="features" className="px-6" style={{ paddingTop: "8rem", paddingBottom: "8rem" }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+    <section id="features" className="px-6 relative overflow-hidden" style={{ paddingTop: "8rem", paddingBottom: "8rem" }}>
+      {/* Subtle background image */}
+      <div className="absolute inset-0 opacity-[0.04]">
+        <img
+          src="/images/camper-snow-winter.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <div style={{ maxWidth: "1280px", margin: "0 auto", position: "relative", zIndex: 1 }}>
         <div className="text-center" style={{ marginBottom: "5rem" }}>
           <span className="section-tag">Why Atlas</span>
           <h2

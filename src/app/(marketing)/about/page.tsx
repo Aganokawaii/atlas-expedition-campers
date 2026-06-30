@@ -16,12 +16,25 @@ export default function AboutPage() {
         <AnimatedSection delay={0.1}>
           <div className="prose max-w-none space-y-6 text-text-secondary leading-relaxed">
             <p className="text-lg">
-              Summit Expedition was born on the logging roads and mountain passes
+              Atlas Expedition was born on the logging roads and mountain passes
               of British Columbia. We&apos;re truck and outdoor enthusiasts —
               born and raised in Vancouver — who spent years searching for a
               lightweight, modern truck camper at a fair price. We couldn&apos;t
               find one. So we built it ourselves.
             </p>
+
+            {/* Manufacturing image */}
+            <div className="rounded-xl overflow-hidden my-10">
+              <img
+                src="/images/shop-camper-shells.jpg"
+                alt="Atlas camper shells in production"
+                className="w-full object-cover"
+                style={{ maxHeight: "420px", filter: "brightness(0.85)" }}
+              />
+              <div className="text-xs text-text-muted text-center mt-3">
+                Atlas camper shells on the production floor — Vancouver, BC
+              </div>
+            </div>
 
             <p>
               Every camper we make is designed with our customers in mind —
@@ -40,7 +53,7 @@ export default function AboutPage() {
               conservation stops being abstract. It becomes personal.
             </p>
             <p>
-              That&apos;s why every Summit camper is designed to be eco-friendly
+              That&apos;s why every Atlas camper is designed to be eco-friendly
               by default — charged by renewable energy, lightweight to lower
               your carbon footprint, and built from materials that will last
               decades, not seasons.
@@ -54,25 +67,25 @@ export default function AboutPage() {
               {[
                 {
                   title: "Sustainable by Design",
-                  desc: "200W solar, energy-efficient construction. No generator required.",
+                  desc: "400W solar, energy-efficient construction. No generator required. No hookups.",
                   icon: "☀️",
                 },
                 {
                   title: "Minimalist. Actually.",
-                  desc: "800 lbs dry. Military-grade aluminum. No-wood composites. Every pound earns its place.",
+                  desc: "Under 1,000 lbs dry. 5-Series aluminum monocoque. Every pound earns its place.",
                   icon: "🪶",
                 },
                 {
                   title: "Modular Architecture",
-                  desc: "Portable amenities that work inside or out. Your camper adapts to your trip.",
+                  desc: "Three tiers — TRAIL, ASCENT, SUMMIT. Portable amenities that work inside or out.",
                   icon: "🧩",
                 },
                 {
                   title: "Built to Outlast",
-                  desc: "No wood means no rot. Our campers are engineered for decades, not model years.",
+                  desc: "Welded aluminum. Fire-rated XPS. Marine-grade wood. No particle board. No shortcuts.",
                   icon: "🛡️",
                 },
-              ].map((p, i) => (
+              ].map((p) => (
                 <div
                   key={p.title}
                   className="bg-bg-surface border border-border-subtle rounded-xl p-6"
@@ -89,12 +102,25 @@ export default function AboutPage() {
             <h2 className="text-text-primary text-2xl font-display mt-12 mb-4">
               Craftsmanship
             </h2>
+
+            {/* Second manufacturing image */}
+            <div className="rounded-xl overflow-hidden my-6">
+              <img
+                src="/images/shop-parts-workbench.jpg"
+                alt="Atlas Expedition parts and assembly"
+                className="w-full object-cover"
+                style={{ maxHeight: "380px", filter: "brightness(0.85)" }}
+              />
+              <div className="text-xs text-text-muted text-center mt-3">
+                Precision components — every part inspected before assembly
+              </div>
+            </div>
+
             <p>
-              Every Summit camper is built around a military-grade 6061-T6
-              aluminum exoskeleton. Our structural panels contain zero wood —
-              they&apos;re closed-cell foam cores laminated with fiberglass-reinforced
-              polymer skins. They will never rot, never delaminate, and never
-              let you down.
+              Every Atlas camper is built around a welded 5-Series (5025)
+              aluminum monocoque shell. Our insulation is XPS fire-rated foam.
+              Our interior is marine-grade eco-friendly wood. Nothing rots.
+              Nothing delaminates. Nothing lets you down.
             </p>
             <p>
               We cut out the middlemen. Designed in Canada, sold direct to you.
@@ -106,7 +132,7 @@ export default function AboutPage() {
               Warranty & Support
             </h2>
             <p>
-              Every camper comes with a 2–3 year comprehensive warranty and
+              Every camper comes with a 2-year comprehensive warranty and
               lifetime support. We&apos;re a small team based in Vancouver, BC
               — when you email us, you get a real person who knows your camper
               by name. Not a ticket number.
